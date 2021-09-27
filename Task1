@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>  
+<html>
+<head>
+<style>
+.error {color: #FF0000;}
+</style>
+</head>
+<body>  
+
+<?php
+$first_nameErr=$last_nameErr = $emailErr = $designationErr = $ageErr = $passwordErr = "";
+$first_name = $last_name = $email = $designation = $age = $password = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["first_name"])) {
+    $first_nameErr = "First Name is required";
+  } else {
+    $first_name = test_input($_POST["first_name"]);
+  }
+
+  if (empty($_POST["last_name"])) {
+    $last_nameErr = "Last Name is required";
+  } else {
+    $last_name = test_input($_POST["first_name"]);
+  }
+ 
+  if (empty($_POST["age"])) {
+    $ageErr = "Age is Required";
+  } else {
+    $age = test_input($_POST["age"]);
+  }
+
+  if (empty($_POST["designation"])) {
+    $designationErr = "designation is required";
+  } else {
+    $designation = test_input($_POST["designation"]);
+  }
+
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+  }
+   
+  if (empty($_POST["password"])) {
+    $passwordErr = "Password is Required";
+  } else {
+    $password = test_input($_POST["password"]);
+  }
+
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
+<h1>Registration Form</h1>
+<p><span class="error">* required field</span></p>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+  First Name: <input type="text" first_name="first_name">
+  <span class="error">* <?php echo $first_nameErr;?></span>
+  <br><br>
+  Last Name: <input type="text" last_name="last_name">
+  <span class="error">* <?php echo $last_nameErr;?></span>
+  <br><br>
+  Age: <input type="text" age="age">
+  <span class="error">* <?php echo $ageErr;?></span>
+  <br><br>
+  designation:
+  <input type="radio" name="designation" value="Junior_programmer">Junior programmer
+  <input type="radio" name="designation" value="Senior_programmer">Senior programmer
+  <input type="radio" name="designation" value="Project_lead">Project lead
+  <span class="error">* <?php echo $designationErr;?></span>
+  <br><br>
+  E-mail: <input type="text" name="email">
+  <span class="error">* <?php echo $emailErr;?></span>
+  <br><br>
+  password: <input type="text" name="password">
+  <span class="error">* <?php echo $passwordErr;?></span>
+  <br><br>
+  <input type="submit" name="submit" value="Submit"> 
+  <input type="reset" name="reset" value="reset"> 
+</form>
+
+<?php
+echo $first_name;
+echo "<br>";
+echo $last_name;
+echo "<br>";
+echo $age;
+echo "<br>";
+echo $designation;
+echo "<br>";
+echo $email;
+echo "<br>";
+echo $password;
+?>
+
+</body>
+</html>
