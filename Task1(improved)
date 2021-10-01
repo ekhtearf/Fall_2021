@@ -54,23 +54,21 @@
     </fieldset>
 
     <br>
-    Your first name is <?php echo $_POST["fname"] ?>
+    Your first name is <?php error_reporting (E_ALL ^ E_NOTICE); echo $_POST["fname"] ?>
     <br>
-    Your last name is <?php echo $_POST["lname"] ?>
+    Your last name is <?php error_reporting (E_ALL ^ E_NOTICE); echo $_POST["lname"] ?>
     <br>
-    your age is <?php echo $_POST["age"] ?>
+    your age is <?php error_reporting (E_ALL ^ E_NOTICE); echo $_POST["age"] ?>
     <br>
-    your designation is <?php $job=$_POST["job"]; echo $job[0];  ?>
+    your designation is <?php error_reporting (E_ALL ^ E_NOTICE); $job=$_POST["job"]; echo $job[0];  ?>
     <br>
-    your preffered languages are <?php $pl=$_POST["pl"]; echo $pl[0]; echo " and "; echo $pl[1]; echo "and"; echo $pl[2]; ?>
+    your preffered language is <?php error_reporting (E_ALL ^ E_NOTICE); $pl=$_POST["pl"]; echo $pl[0]; echo " and "; echo $pl[1]; ?>
     <br>
-    Your Email is <?php echo $_POST["mail"] ?>
+    Your Email is <?php error_reporting (E_ALL ^ E_NOTICE); echo $_POST["mail"] ?>
     <br>
-    The file u uploaded is <?php echo $_POST["files"] ?>
+    The file u uploaded is <?php error_reporting (E_ALL ^ E_NOTICE); echo $_POST["files"] ?>
     <br>
-
-    <br>
-    your password is <?php echo $_POST["pass"] ?>
+    your password is <?php error_reporting (E_ALL ^ E_NOTICE); echo $_POST["pass"] ?>
     <br>
     <br>
 </body>
