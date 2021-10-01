@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ekhtear Ahmed Fahim</title>
+    </head>
+    <body>
+        <fieldset>
+        <h1>Registration Form</h1>
+        <hr>
+        <form>
+                <div>
+                <label for="fname">First Name:</label>
+                <input type="text" name="first_name"  placeholder="Enter your first name" minlength="5" required id="fname"><br>
+                </div>
+                <div>
+                <label for="lname">Last Name:</label>
+                <input type="text" name="last_name" placeholder="Enter your Last Name" minlength="5" required id="lname"><br>
+                </div>
+                <div>
+                <label for="age">Age:</label>
+                <input type="number" value="18" step="1" placeholder="Enter your age" min="18" max="99" maxlength="2" required id="age"><br>
+                </div>
+                <label>Designation:</label>
+                <input type="radio" name="job">Junior Programmer 
+                <input type="radio" name="job">Senior Programmer
+                <input type="radio" name="job" checked>Project Lead
+                <br>
+                <label>Preffered language:</label>
+                <input type="checkbox" name="pl">JAVA
+                <input type="checkbox" name="pl">PHP
+                <input type="checkbox" name="pl">C+
+                <br>
+                <div>
+                <label for="email">E-mail:</label>
+                <input type="email" placeholder="Enter your email" autocomplete="on" id=email required><br>
+                </div>
+                <div>
+                <label for="pass">Password:</label>
+                <input type="password" placeholder="Enter a valid Password" minlength="8" maxlength="32" required id="pass"><br>
+                </div>
+                <div>
+                <label>Please choose a file:</label>
+                <input type="file" multiple placeholder="Choose file" required><br>
+                </div>
+                <label for="submit"></label>
+                <input type="submit" value="Submit" placeholder="Submit" id="submit">
+                <label for="reset"></label>
+                <input type="reset" value="Reset" placeholder="Reset" id="reset">
+                <br>
+                <br>
+                <br>         
+        </form>
+    </fieldset>
+    </body>
+</html>
